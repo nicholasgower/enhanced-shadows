@@ -1,13 +1,14 @@
 {
-  "name": "[internal-mod-name]",
+  "name": "enhanced-shadows",
   "version": "0.0.0",
-  "title": "[MOD DISPLAY NAME]",
-  "author": "[YOUR MODS.FACTORIO.COM USERNAME]",
-  "homepage": "[HOMEPAGE/REPO URL]",
-  "description": "[SHORT DESCRIPTION]",
+  "title": "Enhanced Shadows",
+  "author": "MeteorSwarm",
+  "homepage": "https://discord.gg/gGKZ8fsbUM",
+  "description": Replaces commonly used assets containing baked-in shadows with shadow-separated variants,
   "factorio_version": "2.0",
   "dependencies": [
-    "base"
+    "base",
+    "? space-age"
   ],
   "quality_required": false,
   "rail_bridges_required": false,
