@@ -4,7 +4,7 @@
   "title": "Enhanced Shadows",
   "author": "MeteorSwarm",
   "homepage": "https://discord.gg/gGKZ8fsbUM",
-  "description": Replaces commonly used assets containing baked-in shadows with shadow-separated variants,
+  "description": "Replaces commonly used assets containing baked-in shadows with shadow-separated variants.",
   "factorio_version": "2.0",
   "dependencies": [
     "base",
