@@ -131,7 +131,25 @@ local pictures = {
     hand_closed_picture = "hand_closed_shadow",
 }
 
+
+local function replace_asset(asset_name)
+    local inserter_mods = {
+        "base","space%-age","long_stack_inserter","secretas"
+    }
+    local new_asset = asset_name
+    for _,mod in pairs(inserter_mods) do
+        new_asset = string.gsub(new_asset,"__" .. mod .. "__", "__enhanced-shadows__")
+    end
+
+    return new_asset
+
+end
+
+
+
+
 for _,inserter in pairs(data.raw["inserter"]) do
+    local asset_changed
     for picture, shadow in pairs(pictures) do
         -- inserter[picture] = {
         --     layers = {
@@ -141,8 +159,10 @@ for _,inserter in pairs(data.raw["inserter"]) do
         -- }
         if inserter[shadow] then
             inserter[shadow].draw_as_shadow = true
-            inserter[shadow].filename = string.gsub(inserter[shadow].filename,"__base__","__enhanced-shadows__")
-            inserter[shadow].filename = string.gsub(inserter[shadow].filename,"__space%-age__","__enhanced-shadows__")
+            
+            inserter[shadow].filename = replace_asset(inserter[shadow].filename)
+            --inserter[shadow].filename = string.gsub(inserter[shadow].filename,"__base__","__enhanced-shadows__")
+            --inserter[shadow].filename = string.gsub(inserter[shadow].filename,"__space%-age__","__enhanced-shadows__")
         end
         
         -- if string.find(inserter[shadow].filename,"burner$-inserter$-hand$-")
@@ -160,13 +180,19 @@ for _,inserter in pairs(data.raw["inserter"]) do
                 table.deepcopy(inserter.platform_picture.sheet),
             }
             inserter.platform_picture.sheet = nil
-            inserter.platform_picture.sheets[2].filename = "__enhanced-shadows__/graphics/entity/stack-inserter/stack-inserter-platform-shadow.png"
-            inserter.platform_picture.sheets[2].size = nil
-            inserter.platform_picture.sheets[2].width = 105
-            inserter.platform_picture.sheets[2].height = 79
-            inserter.platform_picture.sheets[2].draw_as_shadow = true
-            inserter.platform_picture.sheets[1].filename = string.gsub(inserter.platform_picture.sheets[1].filename,"__base__","__enhanced-shadows__")
-            inserter.platform_picture.sheets[1].filename = string.gsub(inserter.platform_picture.sheets[1].filename,"__space%-age__","__enhanced-shadows__")
+            local old_filename = inserter.platform_picture.sheets[1].filename
+            inserter.platform_picture.sheets[1].filename  = replace_asset(inserter.platform_picture.sheets[1].filename)
+            if old_filename ~= inserter.platform_picture.sheets[1].filename  then
+                inserter.platform_picture.sheets[2].filename = "__enhanced-shadows__/graphics/entity/stack-inserter/stack-inserter-platform-shadow.png"
+                inserter.platform_picture.sheets[2].size = nil
+                inserter.platform_picture.sheets[2].width = 105
+                inserter.platform_picture.sheets[2].height = 79
+                inserter.platform_picture.sheets[2].draw_as_shadow = true
+            end
+            
+            
+            --inserter.platform_picture.sheets[1].filename = string.gsub(inserter.platform_picture.sheets[1].filename,"__base__","__enhanced-shadows__")
+            --inserter.platform_picture.sheets[1].filename = string.gsub(inserter.platform_picture.sheets[1].filename,"__space%-age__","__enhanced-shadows__")
         end
     end
 end
