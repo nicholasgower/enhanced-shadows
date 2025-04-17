@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2025-04-17
+  Compatibility:
+    - Fixed graphical issues in inserters added by long_stack_inserter and secretas.
+  Bugfixes:
+    - Fixed gaps in inserter platform shadow sprite.
+  Graphics:
+    - Corrected errors in long-handed inserter platform sprite.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2025-04-16
   Graphics:
