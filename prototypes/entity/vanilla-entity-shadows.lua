@@ -210,7 +210,11 @@ if settings.startup["enhanced-shadows-change-planet-shadow-opacity"].value == tr
         aquilo = 0.7,
         frozeta = 0.75,
         maraxsis = 0.2,
+        lemures = 0.7,
+        ["dea-dia"] = 0.4,
         ["space-platform-hub"] = 0.8,
+        nix = 0.45,
+        igrys = 0.35,
     }
     for planet,opacity in pairs(planets) do
         log(planet .. " " .. opacity)
