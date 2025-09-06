@@ -196,6 +196,41 @@ for _,inserter in pairs(data.raw["inserter"]) do
         end
     end
 end
+
+-- Belts
+for _,belt in pairs(data.raw["underground-belt"]) do
+    -- if belt.belt_animation_set then
+    --         belt.belt_animation_set = {
+    --             animation_set = {
+    --                 layers = {
+    --                     table.deepcopy(belt.belt_animation_set.animation_set),
+    --                     table.deepcopy(belt.belt_animation_set.animation_set),
+    --                 }
+    --             }
+            
+    --     }
+    --     local layers = belt.belt_animation_set.animation_set.layers
+    --     if layers[1].filename then
+            
+    --         layers[1].filename = replace_asset(layers[1].filename)
+    --         if string.find(layers[1].filename,"enhanced%-shadows") then
+    --             layers[1].filename = string.gsub(layers[1].filename,".png","_foreground.png")
+    --             layers[2].filename = "__enhanced-shadows__/graphics/entity/transport-belt/transport-belt-shadow.png"
+    --             layers[2].size = 128
+    --             --layers[2].width = 128
+    --             --layers[2].height = 128
+    --             layers[2].draw_as_shadow = true
+
+    --         end
+
+    --     end
+    -- end
+    if belt.structure then
+        
+    end
+    
+
+end
 end
 
 
