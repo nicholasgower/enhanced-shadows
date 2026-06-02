@@ -10,7 +10,8 @@ if settings.startup["enhanced-shadows-separate-shadows"].value == true then
             --local new_layers = {old_picture}
             -- old_picture.filename = __base__/graphics/entity/pipe-to-ground/pipe-to-ground-up.png
             --local new_filename_shadow = string.gsub(old_picture.filename or old_picture.layers[1].filename,"__.+__/graphics/entity","__enhanced-shadows__/graphics/entities")
-            local new_filename = string.gsub(old_picture.filename or old_picture.layers[1].filename,"__.+__/graphics","__enhanced-shadows__/graphics")
+            local filename = old_picture.filename or old_picture.layers and old_picture.layers[1].filename
+            local new_filename = string.gsub(filename,"__.+__/graphics","__enhanced-shadows__/graphics")
             local new_filename_shadow = new_filename
             if string.find(new_filename,"__enhanced%-shadows__") then
                 new_filename_shadow = string.gsub(new_filename,"/pipe%-to%-ground/","/pipe-to-ground-shadow/")
