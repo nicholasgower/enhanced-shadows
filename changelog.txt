@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 2026-06-02
+  Locale:
+    - Updated Polish locale(By S3BA). https://mods.factorio.com/mod/muluna-utility-constants/discussion/69fc72cf4fa120a3d0fb0ae9
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2025-06-23
   Compatibility:
