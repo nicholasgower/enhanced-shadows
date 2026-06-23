@@ -5,7 +5,7 @@
   "author": "MeteorSwarm",
   "homepage": "https://discord.gg/gGKZ8fsbUM",
   "description": "Replaces commonly used assets containing baked-in shadows with shadow-separated variants.",
-  "factorio_version": "2.0",
+  "factorio_version": "2.1",
   "dependencies": [
     "base",
     "space-age"
